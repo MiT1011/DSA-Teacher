@@ -11,10 +11,10 @@ import requests
 load_dotenv()
 app = Flask(__name__)
 
-BACKEND_API_ENDPOINT = "http://localhost:3000/chats/session/"
+BACKEND_API_ENDPOINT = "https://dsa-chat-api.onrender.com/chats/session/"
 
 # Load the Groq API key
-os.environ['GROQ_API_KEY'] = "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"
+os.environ['GROQ_API_KEY'] = os.getenv("GROQ_API_KEY")
 
 llm = ChatGroq(model_name="llama-3.1-70b-versatile")
 # llm = ChatGroq(model_name="llama-3.1-8b-instant")
